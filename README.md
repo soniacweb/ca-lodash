@@ -1,7 +1,5 @@
-# ca-lodash
-
-JAVASCRIPT SYNTAX, PART II
-Lodash
+### JAVASCRIPT SYNTAX, PART II
+## Lodash
 In this project, you will be implementing some of the most exciting functionality from the widely-popular lodash.js library. You will be implementing ten methods that add new functionality for numbers, strings, objects, and arrays.
 
 In implementing each method, we will follow these four steps:
