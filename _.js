@@ -78,6 +78,15 @@ const _ = {
     const dropnum = arr.findIndex(callback)
     const droppedArr = this.drop(arr, dropnum)
     return droppedArr
+  },
+
+  chunk(arr, size) {
+    let arrChunks= []
+    for (let i = 0; i < arr.length; i += size) {
+      let arrChunk = arr.slice(i, i + size)
+      arrChunks.push(arrChunk)
+    }
+    return arrChunks
   }
 }
 
