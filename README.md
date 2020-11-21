@@ -152,3 +152,107 @@ Add one parameter to this method: string.
 Within the method, create a variable called words and set its value equal to string split on space characters ' ' using the .split() method.
 Return the value of words from the method.
 Once you’ve finished implementing this method, move on to the next step to test it.
+
+```
+words(string) {
+    const words = string.split(' ')
+    return words  
+  }
+
+```
+
+# Implement .pad()
+
+1. Specify: The next string method we will implement is .pad(). We will be writing a slightly modified version of this method to save you some time. Read the explanation and examples of the method in the linked documentation to get a sense of how the method should work. Then read below to see which pieces of functionality you will implement.
+
+Here is a summary of what your method should do:
+
+.pad() takes two arguments: a string and a length
+.pad() adds spaces evenly to both sides of the string to make it reach the desired length
+Extra padding is added to the end of the string if an odd amount of padding is required to reach the specified length
+Your method does not need to accept the additional chars parameter; we will only add space characters to pad our string
+You can see a diagram demonstrating this functionality here.
+
+When you’ve ideated a game plan for how to implement this functionality, move on to the next step to see how we plan to do it.
+
+2. Ideate: Again, as noted with previous game plans, there are many solutions to this problem. We chose this one for readability.
+
+Add the .pad() method to the lodash object.
+
+Check to make sure the target length is longer than the current string length. If not, return the unpadded version of the string.
+
+Find the amount of padding to add to the start of the string by finding the difference between the target length and the string length, dividing by two, and rounding down the resulting number. We round down so that any uneven padding gets added to the end of the string, not the beginning, as specified in the instructions.
+
+Find the amount of padding to add to the end of the string by subtracting the string length and the starting padding length (calculated above) from the target length.
+
+Generate the padded string by adding the amount of starting padding and ending padding calculated above to each side of the current string.
+
+Return the padded version of the string.
+
+Once you have tried implementing this game plan in code, move on to the next step to see how we do it.
+
+3. Implement: Let’s implement our game plan in code.
+
+Add a method to our _ object called pad.
+Add two parameters to this method: string and length.
+Within the method, add an if statement that checks if length is shorter than or equal to string‘s length. If so, return string.
+Create a variable called startPaddingLength and set its value equal to the difference of length and string‘s length, divided by 2, and rounded down by using Math.floor().
+Create a variable called endPaddingLength and set its value equal to length minus string‘s length minus startPaddingLength.
+Create a new variable called paddedString and set its value equal to the space character, ' ', repeated startPaddingLength number of times (using the string .repeat() method), concatenated with string, concatenated with the space character repeated endPaddingLength number of times.
+Return the value of paddedString from the method.
+Once you’ve finished implementing this method, move on to the next step to test it.
+
+```
+pad(string, length) {
+    if (string.length >= length) {
+      return string
+    }
+    const startPaddingLength = Math.floor((length - string.length) / 2)
+    const endPaddingLength = length - string.length - startPaddingLength
+    const paddedString = ' '.repeat(startPaddingLength) + string +  ' '.repeat(endPaddingLength)
+    return paddedString
+  }
+
+```
+
+# Implement _.has()
+
+1. Specify: Let’s begin implementing some new object methods! The first object method we will implement is .has(). We will be writing a slightly modified version of this method to save you some time. Read the explanation and examples of the method in the linked documentation to get a sense of how the method should work. Then read below to see which pieces of functionality you will implement.
+
+Here is a summary of what your method should do:
+
+.has() takes two arguments: an object and a key
+.has() checks to see if the provided object contains a value at the specified key
+.has() will return true if the object contains a value at the key and will return false if not
+Your method does not need to accept the additional path parameter; we will only check for unnested values
+When you’ve ideated a game plan for how to implement this functionality, move on to the next step to see how we plan to do it.
+
+2. Ideate: Let’s come up with a game plan for implementing this method.
+
+Add the .has() method to the lodash object.
+
+Access the current value at the specified key in the object.
+
+Check to see if the value at that key is undefined.
+
+Return false if the value is undefined and true if not.
+
+Once you have tried implementing this game plan in code, move on to the next step to see how we do it.
+
+3. Implement: Let’s implement our game plan in code.
+
+Add a method to our _ object called has
+Add two parameters to this method: object and key
+Within the method, create a variable called hasValue and set its value equal to the result of checking to see if the current value of object at key does not equal undefined.
+Return the value of hasValue from the method.
+Once you’ve finished implementing this method, move on to the next step to test it.
+
+```
+has(object, key) {
+    const hasValue = object[key] 
+    if (hasValue !== undefined) {
+      return true
+    } return false
+  }
+
+```
