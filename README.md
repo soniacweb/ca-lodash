@@ -256,3 +256,49 @@ has(object, key) {
   }
 
 ```
+
+# Implement _.invert()
+
+1. Specify: The next object method we will implement is .invert(). Read the explanation and examples of the method in the linked documentation to get a sense of how the method should work.
+
+Here is a summary of what your method should do:
+
+.invert() takes one argument: an object
+.invert() iterates through each key / value pair in the provided object and swaps the key and value
+When you’ve ideated a game plan for how to implement this functionality, move on to the next step to see how we plan to do it.
+
+2. Ideate: Let’s come up with a game plan for implementing this method.
+
+Add the .invert() method to the lodash object.
+
+Create a new object to represent our inverted object.
+
+Iterate through each key in the provided object.
+
+Set the original object’s value at that key to be a key on our inverted object and set the value of that key to be the original object’s key.
+
+Return the inverted object.
+
+Once you have tried implementing this game plan in code, move on to the next step to see how we do it.
+
+3. Implement: Let’s implement our game plan in code.
+
+Add a method to our _ object called invert.
+Add one parameter to this method: object.
+Within the method, create a variable called invertedObject and set its value equal to an empty object.
+Using a for ... in loop, iterate through each key in object.
+Within the loop, create a variable called originalValue and set it equal to the value at the current key in object.
+Still within the loop, set the value at originalValue on invertedObject to be the current key.
+Finally, outside of the loop, return the value of invertedObject from the method.
+
+```
+invert(object) {
+    let invertedObject = {}
+    for (let key in object) {
+      const originalVal = object[key]
+      invertedObject[originalVal] = key
+    }
+    return invertedObject
+  }
+
+```

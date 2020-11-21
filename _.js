@@ -40,9 +40,19 @@ const _ = {
       return true
     } return false
 
-  }
+  },
 
- 
+  invert(object) {
+    let invertedObject = {}
+    for (let key in object) {
+      const originalVal = object[key]
+      invertedObject[originalVal] = key
+    }
+    return invertedObject
+  },
+
+  
+
 }
 
 // Do not write or modify code below this line.
