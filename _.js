@@ -61,8 +61,15 @@ const _ = {
     }
     undefined
     return undefined
-  }
+  },
 
+  drop(arr, n) {
+    if (n === undefined) {
+      n = 1
+    }
+    const droppedArray = arr.slice(n, arr.length)
+    return droppedArray
+  }
 }
 
 // Do not write or modify code below this line.
