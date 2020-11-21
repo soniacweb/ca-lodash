@@ -106,6 +106,23 @@ After our second if statement, create a variable called isInRange and set it equ
 Finally, return the value of isInRange from the method.
 Once you’ve finished implementing this method, move on to the next step to test it.
 
+```
+inRange(number, start, end) {
+    if (end === undefined) {
+      end = start
+      start= 0 
+    } if (start > end) {
+      let temp = end
+      end = start
+      start = temp
+    }
+    const isInRange = (start <= number) && (number < end) ? true : false
+    return isInRange 
+  }
+}
+
+```
+
 # Implement .words()
 
 1. Specify: Let’s start implementing some string methods! The first string method we will implement is .words(). We will be writing a slightly modified version of this method to save you some time. Read the explanation and examples of the method in the linked documentation to get a sense of how the method should work. Then read below to see which pieces of functionality you will implement.
