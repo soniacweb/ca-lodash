@@ -69,6 +69,15 @@ const _ = {
     }
     const droppedArray = arr.slice(n, arr.length)
     return droppedArray
+  },
+
+  dropWhile(arr, pred) {
+    const callback = (a, b) => {
+      return !pred(a, b, arr)
+    }
+    const dropnum = arr.findIndex(callback)
+    const droppedArr = this.drop(arr, dropnum)
+    return droppedArr
   }
 }
 
